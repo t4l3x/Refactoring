@@ -3,7 +3,7 @@
 foreach (explode("\n", file_get_contents($argv[1])) as $row) {
 
     if (empty($row)) break;
-    $p = explode(",",$row);
+    $p = explode(",", $row);
     $p2 = explode(':', $p[0]);
     $value[0] = trim($p2[1], '"');
     $p2 = explode(':', $p[1]);
@@ -11,13 +11,25 @@ foreach (explode("\n", file_get_contents($argv[1])) as $row) {
     $p2 = explode(':', $p[2]);
     $value[2] = trim($p2[1], '"}');
 
-    $binResults = file_get_contents('https://lookup.binlist.net/' .$value[0]);
-    if (!$binResults)
-        die('error!');
-    $r = json_decode($binResults);
-    $isEu = isEu($r->country->alpha2);
+    {
+
+        $binResults = file_get_contents('https://lookup.binlist.net/' . $value[0]);
+        if (!$binResults)
+            die('error!');
+        $r = json_decode($binResults);
+        $isEu = isEu($r->country->alpha2);
 
 
+//        {
+//        "base": "EUR",
+//        "date": "2023-01-25",
+//          "rates": {
+//                "AED": 4.006526,
+//                "AFN": 97.626797,
+//            },
+//       "success": true,
+//       "timestamp": 1674660244
+//    }
 
     $rate = @json_decode(file_get_contents('https://api.exchangeratesapi.io/latest'), true)['rates'][$value[2]];
     if ($value[2] == 'EUR' or $rate == 0) {
@@ -31,9 +43,10 @@ foreach (explode("\n", file_get_contents($argv[1])) as $row) {
     print "\n";
 }
 
-function isEu($c) {
+function isEu($c)
+{
     $result = false;
-    switch($c) {
+    switch ($c) {
         case 'AT':
         case 'BE':
         case 'BG':
@@ -56,7 +69,6 @@ function isEu($c) {
         case 'MT':
         case 'NL':
         case 'PO':
-        case 'PT':
         case 'RO':
         case 'SE':
         case 'SI':
