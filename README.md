@@ -3,6 +3,10 @@ Refactored version of test.php . To begin, clone the repository, install depende
 
 ```composer install```
  ```./vendor/bin/phpunit tests/ for test. ```
+
+---
+### explanation of refactored application structure
+The structure consists of three main components: DTO, Helpers, and Providers. The DTO (Data Transfer Object) component is responsible for managing the data that is passed between different parts of the application, such as between the services and providers. The Helpers component provides utility functions and tools that can be used by other parts of the application. The Providers component is responsible for making requests to external services, such as for retrieving exchange rates or BIN information, and for processing the responses. Finally, the Services component is where the main logic of the application is implemented, using the other components as needed.
 ## Example `input.txt` file
 
 ```
