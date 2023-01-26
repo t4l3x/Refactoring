@@ -19,6 +19,9 @@ for retrieving exchange rates or BIN information,
 and for processing the responses. Finally, the Services 
 component is where the main logic of the application is implemented,
 using the other components as needed.
+
+---
+# Main task:
 ## Example `input.txt` file
 
 ```
