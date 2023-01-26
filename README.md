@@ -16,9 +16,9 @@ Refactored version of test.php . To begin, clone the repository, install depende
 
 ## Running the code
 
-Assuming PHP code is in `app.php`, you could run it by this command, output might be different due to dynamic data:
+Assuming PHP code is in `test.php`, you could run it by this command, output might be different due to dynamic data:
 ```
-> php app.php input.txt
+> php test.php input.txt
 1
 0.46180844185832
 1.6574127786525
