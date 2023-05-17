@@ -1,5 +1,6 @@
 ﻿# Refactoring
-Refactored version of test.php . To begin, clone the repository, install dependencies using Composer, and run the PHPUnit tests.
+Simple (without DI,Factories, etc..) Refactored version of test.php . To begin, clone the repository, install dependencies using Composer, and run the PHPUnit tests.
+
 
 ```composer install```
  ```./vendor/bin/phpunit tests/ for test. ```
